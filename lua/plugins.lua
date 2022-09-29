@@ -63,4 +63,39 @@ packer.startup(function(use)
         require("config.indentblankline").setup()
       end,
     }
+
+		-- Better icons
+    use {
+      "kyazdani42/nvim-web-devicons",
+      module = "nvim-web-devicons",
+      config = function()
+        require("nvim-web-devicons").setup { default = true }
+      end,
+    }
+
+		-- Status line
+    use {
+      "nvim-lualine/lualine.nvim",
+      event = "VimEnter",
+      after = "nvim-treesitter",
+      config = function()
+        require("config.lualine").setup()
+      end,
+      wants = "nvim-web-devicons",
+    }
+
+    -- Treesitter
+    use {
+      "nvim-treesitter/nvim-treesitter",
+      opt = true,
+      event = "BufReadPre",
+      run = ":TSUpdate",
+      config = function()
+        require("config.treesitter").setup()
+      end,
+      requires = {
+        { "nvim-treesitter/nvim-treesitter-textobjects", event = "BufReadPre" },
+      },
+    }
+
 end)
