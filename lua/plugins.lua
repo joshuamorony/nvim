@@ -105,4 +105,19 @@ packer.startup(function(use)
 			"ibhagwan/fzf-lua",
 			requires = { "kyazdani42/nvim-web-devicons" },
 		}
+
+		-- Better Netrw
+		use {"tpope/vim-vinegar"}
+	
+		-- nvim-tree
+		use {
+		 "kyazdani42/nvim-tree.lua",
+		 requires = {
+			 "kyazdani42/nvim-web-devicons",
+		 },
+		 cmd = { "NvimTreeToggle", "NvimTreeClose" },
+			 config = function()
+				 require("config.nvimtree").setup()
+			 end,
+		}
 end)
