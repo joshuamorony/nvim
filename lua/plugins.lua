@@ -98,4 +98,11 @@ packer.startup(function(use)
       },
     }
 
+		use { "junegunn/fzf", run = "./install --all" }
+
+		-- fzf
+		use {
+			"ibhagwan/fzf-lua",
+			requires = { "kyazdani42/nvim-web-devicons" },
+		}
 end)
