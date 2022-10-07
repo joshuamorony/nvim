@@ -120,4 +120,20 @@ packer.startup(function(use)
 				 require("config.nvimtree").setup()
 			 end,
 		}
+
+	
+		-- User interface
+		use {
+			"stevearc/dressing.nvim",
+			event = "BufEnter",
+			config = function()
+				require("dressing").setup {
+					select = {
+						backend = { "telescope", "fzf", "builtin" },
+					},
+				}
+			end,
+		}
+		use { "nvim-telescope/telescope.nvim", module = "telescope", as = "telescope" }
+
 end)
