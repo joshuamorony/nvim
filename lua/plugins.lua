@@ -136,4 +136,6 @@ packer.startup(function(use)
 		}
 		use { "nvim-telescope/telescope.nvim", module = "telescope", as = "telescope" }
 
+		-- VimBeGood
+		use {"ThePrimeagen/vim-be-good"}
 end)
