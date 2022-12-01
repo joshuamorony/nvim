@@ -1,7 +1,10 @@
-require("plugins")
-require("settings")
-require("transparent")
+if vim.g.vscode then
 
+else
+	require("plugins")
+	require("settings")
+	require("transparent")
+end
 -- call plug#begin()
 -- Plug 'patstockwell/vim-monokai-tasty'
 -- Plug 'HerringtonDarkholme/yats.vim'
