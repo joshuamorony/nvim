@@ -1,3 +1,9 @@
+local map = vim.api.nvim_set_keymap;
+
+-- center cursor after jumping
+map("n", "<C-d>", "<C-d>zz", {noremap=true, silent=false})
+map("n", "<C-u>", "<C-u>zz", {noremap=true, silent=false})
+
 if vim.g.vscode then
 
 else
@@ -5,6 +11,8 @@ else
 	require("settings")
 	require("transparent")
 end
+
+
 -- call plug#begin()
 -- Plug 'patstockwell/vim-monokai-tasty'
 -- Plug 'HerringtonDarkholme/yats.vim'
