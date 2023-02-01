@@ -65,4 +65,22 @@ return require('packer').startup(function(use)
     }
     use('norcalli/nvim-colorizer.lua')
 
+    use("SmiteshP/nvim-gps")
+
+    -- WhichKey
+    use {
+         "folke/which-key.nvim",
+         event = "VimEnter",
+    }
+
+    -- IndentLine
+    use {
+      "lukas-reineke/indent-blankline.nvim",
+      event = "BufReadPre",
+    }
+
+    -- Status line
+    use("nvim-lualine/lualine.nvim")
+    use("akinsho/bufferline.nvim")
+
 end)
