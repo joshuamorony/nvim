@@ -1,9 +1,11 @@
 -- Only required if you have packer configured as `opt`
+
 vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
+
     -- for easily changing a line to comment
     use "preservim/nerdcommenter"
 
@@ -13,6 +15,7 @@ return require('packer').startup(function(use)
         requires = { { 'nvim-lua/plenary.nvim' } }
     }
 
+    -- themes
     use { "ellisonleao/gruvbox.nvim" }
     use('Mofiqul/vscode.nvim')
 
@@ -22,9 +25,11 @@ return require('packer').startup(function(use)
     -- a fork of nvim-treesitter that fixes inline html
     use({ "elgiano/nvim-treesitter-angular", branch = "topic/jsx-fix" })
 
+    -- utilities
     use('ThePrimeagen/harpoon')
     use('mbbill/undotree')
     use('kdheepak/lazygit.nvim')
+
     -- lsp stuffs
     use {
         'VonHeikemen/lsp-zero.nvim',
@@ -47,8 +52,10 @@ return require('packer').startup(function(use)
             { 'rafamadriz/friendly-snippets' },
         }
     }
+
     use('jose-elias-alvarez/null-ls.nvim')
     use('MunifTanjim/prettier.nvim')
+
     use {
         'nvim-tree/nvim-tree.lua',
         -- latest has a bug with FindFileToggle. Use this until that resolves
@@ -59,10 +66,6 @@ return require('packer').startup(function(use)
     }
     use('windwp/nvim-autopairs')
     use('windwp/nvim-ts-autotag')
-    use {
-        "folke/todo-comments.nvim",
-        requires = "nvim-lua/plenary.nvim",
-    }
     use('norcalli/nvim-colorizer.lua')
 
     use("SmiteshP/nvim-gps")

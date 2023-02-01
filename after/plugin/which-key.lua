@@ -1,8 +1,3 @@
-local M = {}
-
-function M.setup()
-  local whichkey = require "which-key"
-
   local conf = {
     window = {
       border = "single", -- none, single, double, shadow
@@ -55,8 +50,9 @@ function M.setup()
 
   }
 
-  whichkey.setup(conf)
-  whichkey.register(mappings, opts)
-end
+require("which-key").setup {}
 
-return M
+local wk = require("which-key");
+
+wk.setup(conf);
+wk.register(mappings, opts);

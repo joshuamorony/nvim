@@ -33,8 +33,8 @@ bufferline.setup({
 	options = {
 		view = "default",
 		numbers = function(opts)
-			return string.format("%s", opts.ordinal)
-			-- return string.format('%s·%s', opts.raise(opts.id), opts.lower(opts.ordinal))
+            return string.format("%s", opts.ordinal)
+            -- return string.format('%s·%s', opts.raise(opts.id), opts.lower(opts.ordinal))
 		end,
 		-- mappings = false,
 		buffer_close_icon = "",
@@ -71,3 +71,13 @@ bufferline.setup({
 	--   duplicate_visible = {guibg = "#16242E", gui = "NONE"}
 	-- }
 })
+
+vim.keymap.set('n', '<LEADER>1', '<cmd>lua require("bufferline").go_to_buffer(1, true)<cr>', {silent = true})
+vim.keymap.set('n', '<LEADER>2', '<cmd>lua require("bufferline").go_to_buffer(2, true)<cr>', {silent = true})
+vim.keymap.set('n', '<LEADER>3', '<cmd>lua require("bufferline").go_to_buffer(3, true)<cr>', {silent = true})
+vim.keymap.set('n', '<LEADER>4', '<cmd>lua require("bufferline").go_to_buffer(4, true)<cr>', {silent = true})
+vim.keymap.set('n', '<LEADER>5', '<cmd>lua require("bufferline").go_to_buffer(5, true)<cr>', {silent = true})
+vim.keymap.set('n', '<LEADER>6', '<cmd>lua require("bufferline").go_to_buffer(6, true)<cr>', {silent = true})
+vim.keymap.set('n', '<LEADER>7', '<cmd>lua require("bufferline").go_to_buffer(7, true)<cr>', {silent = true})
+vim.keymap.set('n', '<LEADER>8', '<cmd>lua require("bufferline").go_to_buffer(8, true)<cr>', {silent = true})
+vim.keymap.set('n', '<LEADER>9', '<cmd>lua require("bufferline").go_to_buffer(9, true)<cr>', {silent = true})

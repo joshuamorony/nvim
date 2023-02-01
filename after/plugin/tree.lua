@@ -5,11 +5,11 @@ vim.g.loaded_netrwPlugin = 1
 -- set termguicolors to enable highlight groups
 vim.opt.termguicolors = true
 
-vim.keymap.set("n", "<leader>pv", vim.cmd.NvimTreeToggle)
-vim.keymap.set("n", "<leader>pvf", vim.cmd.NvimTreeFindFileToggle)
+vim.keymap.set("n", "<leader>e", vim.cmd.NvimTreeToggle)
+vim.keymap.set("n", "<leader>ef", vim.cmd.NvimTreeFindFileToggle)
 
-local HEIGHT_RATIO = 0.8  -- You can change this
-local WIDTH_RATIO = 0.8  -- You can change this too
+local HEIGHT_RATIO = 1  -- You can change this
+local WIDTH_RATIO = 0.2  -- You can change this too
 
 local api = require("nvim-tree.api");
 
@@ -23,7 +23,7 @@ require("nvim-tree").setup({
     sort_by = "case_sensitive",
     view = {
         float = {
-            enable = true,
+            enable = false,
             open_win_config = function()
                 local screen_w = vim.opt.columns:get()
                 local screen_h = vim.opt.lines:get() - vim.opt.cmdheight:get()
