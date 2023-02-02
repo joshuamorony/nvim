@@ -114,6 +114,11 @@ _G.packer_plugins = {
     path = "/Users/joshuamorony/.local/share/nvim/site/pack/packer/start/eslint.nvim",
     url = "https://github.com/MunifTanjim/eslint.nvim"
   },
+  ["fidget.nvim"] = {
+    loaded = true,
+    path = "/Users/joshuamorony/.local/share/nvim/site/pack/packer/start/fidget.nvim",
+    url = "https://github.com/j-hui/fidget.nvim"
+  },
   ["friendly-snippets"] = {
     loaded = true,
     path = "/Users/joshuamorony/.local/share/nvim/site/pack/packer/start/friendly-snippets",
@@ -160,6 +165,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/joshuamorony/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
+  },
+  ["neodev.nvim"] = {
+    loaded = true,
+    path = "/Users/joshuamorony/.local/share/nvim/site/pack/packer/start/neodev.nvim",
+    url = "https://github.com/folke/neodev.nvim"
   },
   nerdcommenter = {
     loaded = true,
@@ -210,6 +220,13 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/joshuamorony/.local/share/nvim/site/pack/packer/start/nvim-treesitter-angular",
     url = "https://github.com/elgiano/nvim-treesitter-angular"
+  },
+  ["nvim-treesitter-textobjects"] = {
+    load_after = {},
+    loaded = true,
+    needs_bufread = false,
+    path = "/Users/joshuamorony/.local/share/nvim/site/pack/packer/opt/nvim-treesitter-textobjects",
+    url = "https://github.com/nvim-treesitter/nvim-treesitter-textobjects"
   },
   ["nvim-ts-autotag"] = {
     loaded = true,
@@ -266,6 +283,11 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+-- Load plugins in order defined by `after`
+time([[Sequenced loading]], true)
+vim.cmd [[ packadd nvim-treesitter ]]
+vim.cmd [[ packadd nvim-treesitter-textobjects ]]
+time([[Sequenced loading]], false)
 vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Event lazy-loads
