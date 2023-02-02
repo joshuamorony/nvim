@@ -84,6 +84,7 @@ return require('packer').startup(function(use)
             'nvim-tree/nvim-web-devicons', -- optional, for file icons
         },
     }
+
     use('windwp/nvim-autopairs')
     use('windwp/nvim-ts-autotag')
     use('norcalli/nvim-colorizer.lua')
@@ -107,3 +108,4 @@ return require('packer').startup(function(use)
     use("akinsho/bufferline.nvim")
 
 end)
+
