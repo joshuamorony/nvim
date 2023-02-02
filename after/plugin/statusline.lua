@@ -25,6 +25,9 @@ lualine.setup({
 					hint = "DiagnosticHint",
 				},
 			},
+            {
+                "progress"
+            }
 		},
 	},
 })
