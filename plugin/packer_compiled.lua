@@ -109,6 +109,11 @@ _G.packer_plugins = {
     path = "/Users/joshuamorony/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
+  ["eslint.nvim"] = {
+    loaded = true,
+    path = "/Users/joshuamorony/.local/share/nvim/site/pack/packer/start/eslint.nvim",
+    url = "https://github.com/MunifTanjim/eslint.nvim"
+  },
   ["friendly-snippets"] = {
     loaded = true,
     path = "/Users/joshuamorony/.local/share/nvim/site/pack/packer/start/friendly-snippets",
@@ -241,11 +246,6 @@ _G.packer_plugins = {
     path = "/Users/joshuamorony/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
-  ["todo-comments.nvim"] = {
-    loaded = true,
-    path = "/Users/joshuamorony/.local/share/nvim/site/pack/packer/start/todo-comments.nvim",
-    url = "https://github.com/folke/todo-comments.nvim"
-  },
   undotree = {
     loaded = true,
     path = "/Users/joshuamorony/.local/share/nvim/site/pack/packer/start/undotree",
@@ -270,8 +270,8 @@ vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Event lazy-loads
 time([[Defining lazy-load event autocommands]], true)
-vim.cmd [[au VimEnter * ++once lua require("packer.load")({'which-key.nvim'}, { event = "VimEnter *" }, _G.packer_plugins)]]
 vim.cmd [[au BufReadPre * ++once lua require("packer.load")({'indent-blankline.nvim'}, { event = "BufReadPre *" }, _G.packer_plugins)]]
+vim.cmd [[au VimEnter * ++once lua require("packer.load")({'which-key.nvim'}, { event = "VimEnter *" }, _G.packer_plugins)]]
 time([[Defining lazy-load event autocommands]], false)
 vim.cmd("augroup END")
 
