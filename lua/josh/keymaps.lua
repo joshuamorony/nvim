@@ -1,3 +1,7 @@
+-- general
+vim.keymap.set('n', '<c-l>', '<cmd>bnext<CR>');
+vim.keymap.set('n', '<c-h>', '<cmd>bprev<CR>');
+
 -- telescope
 vim.keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles, { desc = '[?] Find recently opened files' })
 vim.keymap.set('n', '<leader><space>', require('telescope.builtin').buffers, { desc = '[ ] Find existing buffers' })
@@ -18,3 +22,7 @@ vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { de
 -- nvim-tree
 vim.keymap.set("n", "<leader>e", vim.cmd.NvimTreeToggle)
 vim.keymap.set("n", "<leader>ef", vim.cmd.NvimTreeFindFileToggle)
+
+-- source
+vim.keymap.set("n", "<leader><leader>s", "<cmd>source ~/.config/nvim/after/plugin/luasnip.lua<CR>")
+vim.keymap.set("n", "<leader><leader>k", "<cmd>source ~/.config/nvim/lua/josh/keymaps.lua<CR>")
