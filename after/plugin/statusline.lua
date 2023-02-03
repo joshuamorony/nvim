@@ -1,5 +1,4 @@
 require("nvim-gps").setup()
-local bufferline = require("bufferline")
 local lualine = require("lualine")
 local gps = require("nvim-gps")
 

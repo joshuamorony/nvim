@@ -1,3 +1,3 @@
 require("josh.settings");
-require("josh.remap");
+require("josh.keymaps");
 require("josh.packer");

@@ -5,19 +5,10 @@ vim.g.loaded_netrwPlugin = 1
 -- set termguicolors to enable highlight groups
 vim.opt.termguicolors = true
 
-vim.keymap.set("n", "<leader>e", vim.cmd.NvimTreeToggle)
-vim.keymap.set("n", "<leader>ef", vim.cmd.NvimTreeFindFileToggle)
-
 local HEIGHT_RATIO = 1  -- You can change this
 local WIDTH_RATIO = 0.25  -- You can change this too
 
 local api = require("nvim-tree.api");
-
--- close NvimTree on start up so it won't conflict with Telescope
-vim.api.nvim_create_autocmd("User", {
-    pattern = "NvimTreeSetup",
-    callback = api.tree.close
-})
 
 require("nvim-tree").setup({
     sort_by = "case_sensitive",
