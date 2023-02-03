@@ -94,12 +94,6 @@ return require('packer').startup(function(use)
 
     use("SmiteshP/nvim-gps")
 
-    -- WhichKey
-    use {
-         "folke/which-key.nvim",
-         event = "VimEnter",
-    }
-
     -- IndentLine
     use {
       "lukas-reineke/indent-blankline.nvim",

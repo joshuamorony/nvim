@@ -21,6 +21,7 @@ vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { de
 vim.keymap.set('n', '<leader>jl', require('telescope.builtin').jumplist, { desc = '[J]ump [L]ist'})
 vim.keymap.set('n', '<leader>km', require('telescope.builtin').keymaps, { desc = '[K]ey[M]aps'})
 vim.keymap.set('n', '<leader>rg', require('telescope.builtin').registers, { desc = '[R]egisters'})
+vim.keymap.set('n', '<leader>ht', require('telescope.builtin').help_tags, { desc = '[H]elp [T]ags'})
 
 -- lsp
 require('lsp-zero').on_attach(function(_, bufnr)
