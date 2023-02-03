@@ -105,7 +105,7 @@ return require('packer').startup(function(use)
 
     -- Status line
     use("nvim-lualine/lualine.nvim")
-    use("akinsho/bufferline.nvim")
+    -- use("akinsho/bufferline.nvim")
 
 end)
 

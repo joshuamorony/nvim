@@ -26,6 +26,7 @@ vim.opt.laststatus = 2 -- always show statusline
 -- Sidebar
 vim.opt.numberwidth = 3
 vim.opt.showcmd = true
+vim.opt.cmdheight=0
 
 -- Search
 vim.o.incsearch = true -- starts searching as soon as typing, without enter needed

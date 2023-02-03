@@ -50,7 +50,7 @@ require("nvim-tree").setup({
         end,
     },
     renderer = {
-        group_empty = true,
+        group_empty = false,
     },
     filters = {
         dotfiles = true,
