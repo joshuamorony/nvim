@@ -5,6 +5,23 @@ vim.keymap.set('n', '<leader>w', '<c-w>');
 vim.keymap.set('n', 'U', '<c-u>');
 vim.keymap.set('n', 'D', '<c-d>');
 
+-- lazygit
+vim.keymap.set("n", "<leader>gs", vim.cmd.LazyGit)
+
+-- harpoon
+local mark = require("harpoon.mark")
+local ui = require("harpoon.ui")
+
+vim.keymap.set("n", "<leader>a", mark.add_file)
+vim.keymap.set("n", "<C-e>", ui.toggle_quick_menu)
+vim.keymap.set("n", "<C-h>", function () ui.nav_file(1) end)
+vim.keymap.set("n", "<C-t>", function () ui.nav_file(2) end)
+vim.keymap.set("n", "<C-n>", function () ui.nav_file(3) end)
+vim.keymap.set("n", "<C-s>", function () ui.nav_file(4) end)
+
+-- undotree
+vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
+
 -- telescope
 vim.keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles, { desc = '[?] Find recently opened files' })
 vim.keymap.set('n', '<leader><space>', require('telescope.builtin').buffers, { desc = '[ ] Find existing buffers' })
