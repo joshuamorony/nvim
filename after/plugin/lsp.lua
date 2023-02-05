@@ -10,7 +10,8 @@ lsp.ensure_installed({
     'html',
     'cssls',
     'sumneko_lua',
-    'jsonls'
+    'jsonls',
+    'tailwindcss'
 })
 
 -- Fix Undefined global 'vim'
