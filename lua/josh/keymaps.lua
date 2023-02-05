@@ -2,6 +2,8 @@
 vim.keymap.set('n', '<c-l>', '<cmd>bnext<CR>', { desc = 'Next buffer'});
 vim.keymap.set('n', '<c-h>', '<cmd>bprev<CR>', { desc = 'Prev buffer'});
 vim.keymap.set('n', '<leader>w', '<c-w>');
+vim.keymap.set('n', 'U', '<c-u>');
+vim.keymap.set('n', 'D', '<c-d>');
 
 -- telescope
 vim.keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles, { desc = '[?] Find recently opened files' })
