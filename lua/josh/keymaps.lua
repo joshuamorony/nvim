@@ -2,8 +2,11 @@
 vim.keymap.set('n', '<c-l>', '<cmd>bnext<CR>', { desc = 'Next buffer'});
 vim.keymap.set('n', '<c-h>', '<cmd>bprev<CR>', { desc = 'Prev buffer'});
 vim.keymap.set('n', '<leader>w', '<c-w>');
-vim.keymap.set('n', 'U', '<c-u>');
-vim.keymap.set('n', 'D', '<c-d>');
+vim.keymap.set('n', 'U', '<c-u>zz');
+vim.keymap.set('n', 'D', '<c-d>zz');
+
+-- custom
+vim.keymap.set("n", "<leader>sp", "<cmd>lua require('josh.custom.angular').toggle_between_spec_and_file()<cr>")
 
 -- aerial
 require("aerial").setup({
