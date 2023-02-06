@@ -5,6 +5,12 @@ vim.keymap.set('n', '<leader>w', '<c-w>');
 vim.keymap.set('n', 'U', '<c-u>');
 vim.keymap.set('n', 'D', '<c-d>');
 
+-- jesting
+vim.keymap.set('n', '<leader>ja', vim.cmd.Jest)
+vim.keymap.set('n', '<leader>jf', vim.cmd.JestFile)
+vim.keymap.set('n', '<leader>js', vim.cmd.JestSingle)
+vim.keymap.set('n', '<leader>jc', vim.cmd.JestCoverage)
+
 -- lazygit
 vim.keymap.set("n", "<leader>gs", vim.cmd.LazyGit)
 
