@@ -79,6 +79,11 @@ _G.packer_plugins = {
     path = "/Users/joshuamorony/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
+  ["aerial.nvim"] = {
+    loaded = true,
+    path = "/Users/joshuamorony/.local/share/nvim/site/pack/packer/start/aerial.nvim",
+    url = "https://github.com/stevearc/aerial.nvim"
+  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/Users/joshuamorony/.local/share/nvim/site/pack/packer/start/cmp-buffer",
