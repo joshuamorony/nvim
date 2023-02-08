@@ -11,25 +11,19 @@ local function load_file_into_buffer(file)
 	vim.fn.execute("edit")
 end
 
-function M.jump_to_angular_component_part(part)
-  -- todo: implement inline jumping
-end
-
-function M.toggle_between_spec_and_file()
+function M.toggle_between_svelte_parts()
 	local current_buffer = vim.api.nvim_buf_get_name(0)
 	local buf_path = path:new(current_buffer)
 	local relative_path = buf_path:make_relative()
 	local filename = string.match(relative_path, "([^/]+)$")
 
 	local full_destination = nil
-	if string.match(filename, ".spec.ts") then
-		-- if the current file is a spec file, then jump to the file it is testing
-		local file_name = string.match(filename, "(.-)%.spec")
-		full_destination = buf_path:parent() .. "/" .. file_name .. ".ts"
+	if string.match(filename, ".ts") then
+		local file_name = string.match(filename, "(.-)%.ts")
+		full_destination = buf_path:parent() .. "/" .. file_name .. ".svelte"
 	else
-		-- if the current file is not a spec file, then jump to the spec file
-		local filename_without_ext = string.match(filename, "(.-)%.ts")
-		full_destination = buf_path:parent() .. "/" .. filename_without_ext .. ".spec.ts"
+		local file_name = string.match(filename, "(.-)%.svelte")
+		full_destination = buf_path:parent() .. "/" .. file_name .. ".ts"
 	end
 
 	local exists = vim.fn.filereadable(full_destination)

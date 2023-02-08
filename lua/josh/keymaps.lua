@@ -7,6 +7,7 @@ vim.keymap.set('n', 'D', '<c-d>zz');
 
 -- custom
 vim.keymap.set("n", "<leader>sp", "<cmd>lua require('josh.custom.angular').toggle_between_spec_and_file()<cr>")
+vim.keymap.set("n", "<leader>sv", "<cmd>lua require('josh.custom.svelte').toggle_between_svelte_parts()<cr>")
 
 -- aerial
 require("aerial").setup({
