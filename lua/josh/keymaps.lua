@@ -6,8 +6,9 @@ vim.keymap.set('n', 'U', '<c-u>zz');
 vim.keymap.set('n', 'D', '<c-d>zz');
 
 -- custom
-vim.keymap.set("n", "<leader>sp", "<cmd>lua require('josh.custom.angular').toggle_between_spec_and_file()<cr>")
-vim.keymap.set("n", "<leader>sv", "<cmd>lua require('josh.custom.svelte').toggle_between_svelte_parts()<cr>")
+vim.keymap.set("n", "<leader>sp", "<cmd>lua require('josh.custom.angular').toggle_between_spec_and_file()<cr>", { desc = "Toggle between spec and file"})
+vim.keymap.set("n", "<leader>sv", "<cmd>lua require('josh.custom.svelte').toggle_between_svelte_parts()<cr>", { desc = "Toggle between .svelete and .ts"})
+vim.keymap.set("n", "<leader>bw", "<cmd>bufdo bwipeout<cr>", { desc = "Close all buffers"})
 
 -- aerial
 require("aerial").setup({
