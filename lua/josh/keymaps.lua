@@ -4,6 +4,7 @@ vim.keymap.set('n', '<c-h>', '<cmd>bprev<CR>', { desc = 'Prev buffer'});
 vim.keymap.set('n', '<leader>w', '<c-w>');
 vim.keymap.set('n', 'U', '<c-u>zz');
 vim.keymap.set('n', 'D', '<c-d>zz');
+vim.keymap.set('n', '<leader>cf', '0<c-g>', { desc = 'Show full file path'});
 
 -- custom
 vim.keymap.set("n", "<leader>sp", "<cmd>lua require('josh.custom.angular').toggle_between_spec_and_file()<cr>", { desc = "Toggle between spec and file"})
