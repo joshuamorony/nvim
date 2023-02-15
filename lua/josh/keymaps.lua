@@ -4,7 +4,27 @@ vim.keymap.set('n', '<c-h>', '<cmd>bprev<CR>', { desc = 'Prev buffer'});
 vim.keymap.set('n', '<leader>w', '<c-w>');
 vim.keymap.set('n', 'U', '<c-u>zz');
 vim.keymap.set('n', 'D', '<c-d>zz');
+vim.keymap.set("n", "n", "nzzzv")
+vim.keymap.set("n", "N", "Nzzzv")
 vim.keymap.set('n', '<leader>cf', '0<c-g>', { desc = 'Show full file path'});
+vim.keymap.set("n", "Q", "<nop>")
+
+-- quickfix
+vim.keymap.set("n", "<leader>q", "<C-q>")
+vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
+vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
+vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
+vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
+
+-- replace highlighted word
+vim.keymap.set("n", "<leader>s", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>")
+
+-- move lines
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+
+-- join lines
+vim.keymap.set("n", "J", "mzJ`z")
 
 -- custom
 vim.keymap.set("n", "<leader>sp", "<cmd>lua require('josh.custom.angular').toggle_between_spec_and_file()<cr>", { desc = "Toggle between spec and file"})
