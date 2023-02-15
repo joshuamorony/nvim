@@ -9,13 +9,13 @@ lsp.ensure_installed({
     'angularls',
     'html',
     'cssls',
-    'sumneko_lua',
     'jsonls',
+    'lua_ls',
     'tailwindcss',
 })
 
 -- Fix Undefined global 'vim'
-lsp.configure('sumneko_lua', {
+lsp.configure('lua_ls', {
     settings = {
         Lua = {
             diagnostics = {
