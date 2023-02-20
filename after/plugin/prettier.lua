@@ -46,6 +46,7 @@ prettier.setup({
         "typescript",
         "typescriptreact",
         "yaml",
-        "lua"
+        "lua",
+        "svelte"
     },
 })
