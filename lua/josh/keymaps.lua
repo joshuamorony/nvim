@@ -30,6 +30,9 @@ vim.keymap.set("n", "J", "mzJ`z")
 vim.keymap.set("n", "<leader>sp", "<cmd>lua require('josh.custom.angular').toggle_between_spec_and_file()<cr>", { desc = "Toggle between spec and file"})
 vim.keymap.set("n", "<leader>sv", "<cmd>lua require('josh.custom.svelte').toggle_between_svelte_parts()<cr>", { desc = "Toggle between .svelete and .ts"})
 vim.keymap.set("n", "<leader>bw", "<cmd>bufdo bwipeout<cr>", { desc = "Close all buffers"})
+vim.keymap.set("n", "<leader>-", "<cmd>rightbelow split <cr>");
+
+vim.keymap.set("n", "<leader>\\", "<cmd>rightbelow vsplit <cr>");
 
 -- aerial
 require("aerial").setup({
