@@ -112,33 +112,6 @@ vim.keymap.set("n", "<leader>e", vim.cmd.NvimTreeToggle)
 vim.keymap.set("n", "<leader>ef", vim.cmd.NvimTreeFindFileToggle)
 
 -- jump list + buffer
--- function jumps_fileCO(up)
-    -- local current_buffer = vim.fn.bufnr()
-
-    -- -- Get the jump list and parse the position of the first jump in the list
-    -- -- if the number is zero then we reached the top
-    -- local jumps_output = vim.fn.execute('jumps', '')
-    -- local jumps_list = vim.split(jumps_output, '\n')
-    -- local lastjump = jumps_list[1]
-    -- local lastjumppos = tonumber(string.match(lastjump, '%d+'))
-
-    -- -- Execute the jump command until the buffer changes or there are no more jumps
-    -- if lastjumppos == nil then
-     -- lastjumppos = 0
-    -- end
-
-    -- while vim.fn.bufnr() == current_buffer and lastjumppos > 0 do
-        -- if up then
-            -- vim.fn.execute('normal! <c-o>')
-        -- else
-            -- -- \<CR> is an ugly hack to do nothing but let the normal command
-            -- -- see that it has an argument
-            -- vim.fn.execute('normal! <CR><c-i>')
-        -- end
-        -- lastjumppos = lastjumppos - 1
-    -- end
--- end
-
 function jumps_fileCO(direction)
     -- Default to jumping backward if no direction is specified
     direction = direction or 'backward'
@@ -167,8 +140,8 @@ function jumps_fileCO(direction)
     end
 end
 
-vim.keymap.set('n', '<c-l>', "<cmd>lua jumps_fileCO()<cr>", { desc = 'Next buffer in jump list'});
-vim.keymap.set('n', '<c-h>', "<cmd>lua jumps_fileCO('forward')<cr>", { desc = 'Prev buffer in jump list'});
+vim.keymap.set('n', '<c-l>', "<cmd>lua jumps_fileCO('forward')<cr>", { desc = 'Next buffer in jump list'});
+vim.keymap.set('n', '<c-h>', "<cmd>lua jumps_fileCO()<cr>", { desc = 'Prev buffer in jump list'});
 
 -- source
 vim.keymap.set("n", "<leader><leader>s", "<cmd>source ~/.config/nvim/after/plugin/luasnip.lua<CR>")
