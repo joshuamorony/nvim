@@ -20,7 +20,7 @@ lualine.setup({
                 }
             },
         },
-		lualine_x = { { gps.get_location, cond = gps.is_available } },
+		-- lualine_x = { { gps.get_location, cond = gps.is_available } },
 		-- lualine_x = {"b:gitsigns_status"},
 		lualine_y = { "filetype" },
 		lualine_z = {
