@@ -1,5 +1,5 @@
---local themes = { "gruvbox" }
-local themes = { "vscode" }
+local themes = { "gruvbox" }
+--local themes = { "vscode" }
 
 vim.opt.cursorline = true
 vim.opt.cursorlineopt = "number"
