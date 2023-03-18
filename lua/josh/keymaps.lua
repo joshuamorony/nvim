@@ -30,6 +30,10 @@ vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 -- join lines
 vim.keymap.set("n", "J", "mzJ`z")
 
+-- markdown
+vim.keymap.set("n", "<leader>da", "<cmd>setlocal formatoptions-=a<cr><cmd>setlocal textwidth=0<cr><cmd>echo \"Auto-wrapping disabled\"<cr>", {desc = "Disable auto wrap"})
+vim.keymap.set("n", "<leader>ea", "<cmd>setlocal formatoptions+=a<cr><cmd>setlocal textwidth=80<cr><cmd>echo \"Auto-wrapping enabled\"<cr>", {desc = "Enable auto wrap"})
+
 -- custom
 vim.keymap.set("n", "<leader>sp", "<cmd>lua require('josh.custom.angular').toggle_between_spec_and_file()<cr>", { desc = "Toggle between spec and file"})
 vim.keymap.set("n", "<leader>sv", "<cmd>lua require('josh.custom.svelte').toggle_between_svelte_parts()<cr>", { desc = "Toggle between .svelete and .ts"})

@@ -39,7 +39,5 @@ vim.cmd([[
     autocmd FileType markdown setlocal wrap
     autocmd FileType markdown setlocal textwidth=80
     autocmd FileType markdown setlocal formatoptions+=a
-    autocmd FileType markdown nnoremap <buffer> <F3> :setlocal formatoptions-=a<CR>:setlocal textwidth=0<CR>:echo "Auto-wrapping disabled"<CR>
-    autocmd FileType markdown nnoremap <buffer> <F4> :setlocal formatoptions+=a<CR>:setlocal textwidth=80<CR>:echo "Auto-wrapping enabled"<CR>
   augroup END
 ]])
