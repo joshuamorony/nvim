@@ -106,5 +106,18 @@ return require('packer').startup(function(use)
     use("nvim-lualine/lualine.nvim")
     -- use("akinsho/bufferline.nvim")
 
+    -- markdown
+    
+    use { "godlygeek/tabular", cmd = { "Tabularize" } }
+    use { "preservim/vim-markdown", ft = { "markdown" } }
+    use {
+      "iamcco/markdown-preview.nvim",
+      run = "cd app && npm install",
+      ft = { "markdown" },
+    }
+    use { "rhysd/vim-grammarous", ft = { "markdown" } }
+    use { 'vim-pandoc/vim-pandoc-syntax' }
+
+
 end)
 

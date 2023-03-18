@@ -44,8 +44,6 @@ vim.opt.colorcolumn = "120"
 
 vim.g.mapleader = " "
 
--- Add asterisks in block comments
-vim.opt.formatoptions:append { 'r' }
 
 -- highlight yanked text for 200ms using the "Visual" highlight group
 vim.cmd [[
