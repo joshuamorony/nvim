@@ -1,3 +1,6 @@
+-- commands
+vim.cmd([[command! W w]])
+
 -- general
 -- vim.keymap.set('n', '<c-l>', '<cmd>bnext<CR>', { desc = 'Next buffer'});
 -- vim.keymap.set('n', '<c-h>', '<cmd>bprev<CR>', { desc = 'Prev buffer'});
@@ -37,6 +40,7 @@ vim.keymap.set("n", "<leader>ea", "<cmd>setlocal formatoptions+=a<cr><cmd>setloc
 vim.keymap.set("v", "<leader>mb", "di****<esc>hhp", {desc = "Auto bold"})
 vim.keymap.set("v", "<leader>mi", "di**<esc>hp", {desc = "Auto italic"})
 vim.keymap.set("v", "<leader>ml", "di[]()<esc>hhhpllli", {desc = "Auto link"})
+vim.keymap.set("v", "<leader>mc", "di``<esc>hp", {desc = "Auto backtick"})
 
 -- custom
 vim.keymap.set("n", "<leader>sp", "<cmd>lua require('josh.custom.angular').toggle_between_spec_and_file()<cr>", { desc = "Toggle between spec and file"})
