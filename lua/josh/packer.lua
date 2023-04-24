@@ -44,6 +44,17 @@ return require('packer').startup(function(use)
     use('kdheepak/lazygit.nvim')
     use('mattkubej/jest.nvim')
 
+    -- nx
+    use {
+        'Equilibris/nx.nvim',
+        requires = {
+            'nvim-telescope/telescope.nvim',
+        },
+        config = function()
+            require("nx").setup {}
+        end
+    }
+
     -- lsp stuffs
     use {
         'VonHeikemen/lsp-zero.nvim',
