@@ -115,6 +115,8 @@ return require('packer').startup(function(use)
       -- event = "BufReadPre",
     -- }
 
+    use {'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async'}
+
     -- Status line
     use("nvim-lualine/lualine.nvim")
     -- use("akinsho/bufferline.nvim")

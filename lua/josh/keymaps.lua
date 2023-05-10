@@ -158,6 +158,15 @@ end
 vim.keymap.set('n', '<c-l>', "<cmd>lua jumps_fileCO('forward')<cr>", { desc = 'Next buffer in jump list'});
 vim.keymap.set('n', '<c-h>', "<cmd>lua jumps_fileCO()<cr>", { desc = 'Prev buffer in jump list'});
 
+-- Using ufo provider need remap `zR` and `zM`. If Neovim is 0.6.1, remap yourself
+vim.keymap.set('n', 'zR', require('ufo').openAllFolds);
+vim.keymap.set('n', 'zM', require('ufo').closeAllFolds);
+vim.keymap.set('n', '<leader>FO', require('ufo').openAllFolds, { desc = 'Open all folds'});
+vim.keymap.set('n', '<leader>FC', require('ufo').closeAllFolds, { desc = 'Close all folds'});
+vim.keymap.set('n', '<leader>fo', '<cmd>foldo<cr>', { desc = 'Open [fo]ld'});
+vim.keymap.set('n', '<leader>fc', '<cmd>foldc<cr>', { desc = 'Close [fo]ld'});
+
 -- source
 vim.keymap.set("n", "<leader><leader>s", "<cmd>source ~/.config/nvim/after/plugin/luasnip.lua<CR>")
 vim.keymap.set("n", "<leader><leader>k", "<cmd>source ~/.config/nvim/lua/josh/keymaps.lua<CR>")
+
