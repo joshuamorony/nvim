@@ -25,9 +25,9 @@ lsp.configure('lua_ls', {
     }
 })
 
-lsp.configure('denols', {
-    root_dir = lsp_util.root_pattern("deno.json", "deno.jsonc"),
-})
+-- lsp.configure('denols', {
+    -- root_dir = lsp_util.root_pattern("deno.json", "deno.jsonc"),
+-- })
 
 lsp.configure('tsserver', {
     root_dir = lsp_util.root_pattern("package.json"),
