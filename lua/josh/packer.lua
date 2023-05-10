@@ -108,10 +108,12 @@ return require('packer').startup(function(use)
     use("SmiteshP/nvim-gps")
 
     -- IndentLine
-    use {
-      "lukas-reineke/indent-blankline.nvim",
-      event = "BufReadPre",
-    }
+
+    use "lukas-reineke/indent-blankline.nvim"
+    -- use {
+      -- "lukas-reineke/indent-blankline.nvim",
+      -- event = "BufReadPre",
+    -- }
 
     -- Status line
     use("nvim-lualine/lualine.nvim")
