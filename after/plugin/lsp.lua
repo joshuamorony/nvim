@@ -48,27 +48,63 @@ lsp.configure('nxls', {
     settings = {},
 })
 
-local has_words_before = function()
-  if vim.api.nvim_buf_get_option(0, "buftype") == "prompt" then return false end
-  local line, col = table.unpack(vim.api.nvim_win_get_cursor(0))
-  return col ~= 0 and vim.api.nvim_buf_get_text(0, line-1, 0, line-1, col, {})[1]:match("^%s*$") == nil
-end
-
-local cmp = require('cmp')
-local cmp_select = { behavior = cmp.SelectBehavior.Select }
-local cmp_mappings = lsp.defaults.cmp_mappings({
-    ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
-    ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
-    ['<C-y>'] = cmp.mapping.confirm({ select = true }),
-    ['<C-Space>'] = cmp.mapping.complete(),
-    ['<Tab>'] = vim.schedule_wrap(function (fallback)
-        if cmp.visible() and has_words_before() then
-            cmp.select_next_item({behavior = cmp.SelectBehavior.Select})
-        else
-            fallback()
-        end
-    end)
+-- Set up nvim-cmp.
+local cmp = require("cmp")
+cmp.setup({
+  enabled = function()
+    if require("cmp.config.context").in_treesitter_capture("comment") == true
+        or require("cmp.config.context").in_syntax_group("Comment")
+        or vim.api.nvim_buf_get_option(0, "filetype") == "TelescopePrompt"
+    then
+      return false
+    else
+      return true
+    end
+  end,
+  snippet = {
+    expand = function(args)
+      require("luasnip").lsp_expand(args.body) -- For `luasnip` users.
+    end,
+  },
+  window = {
+    -- completion = cmp.config.window.bordered(),
+    -- documentation = cmp.config.window.bordered(),
+  },
+  mapping = cmp.mapping.preset.insert({
+    ["<C-b>"] = cmp.mapping.scroll_docs(-4),
+    ["<C-f>"] = cmp.mapping.scroll_docs(4),
+    ["<C-Space>"] = cmp.mapping.complete(),
+    ["<C-e>"] = cmp.mapping.abort(),
+    ["<CR>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+  }),
+  sources = cmp.config.sources({
+    { name = "nvim_lsp" },
+    { name = "luasnip" }, -- For luasnip users.
+  }, {
+    { name = "buffer" },
+  }),
 })
+
+-- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
+cmp.setup.cmdline({ "/", "?" }, {
+  mapping = cmp.mapping.preset.cmdline(),
+  sources = {
+    { name = "buffer" },
+  },
+})
+
+-- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
+cmp.setup.cmdline(":", {
+  mapping = cmp.mapping.preset.cmdline(),
+  sources = cmp.config.sources({
+    { name = "path" },
+  }, {
+    { name = "cmdline" },
+  }),
+})
+
+-- Set up lspconfig.
+local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 -- disable completion with tab
 -- this helps with copilot setup
