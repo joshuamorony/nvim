@@ -52,3 +52,10 @@ vim.cmd [[
   au TextYankPost * silent! lua vim.highlight.on_yank({higroup="Visual", timeout=100})
   augroup END
 ]]
+
+vim.cmd([[
+  augroup SVX
+    autocmd!
+    autocmd BufRead,BufNewFile *.svx set filetype=markdown
+  augroup END
+]])

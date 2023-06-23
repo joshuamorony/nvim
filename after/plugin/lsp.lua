@@ -1,5 +1,6 @@
 local lsp = require('lsp-zero')
 local lsp_util = require('lspconfig.util');
+local lspconfig = require("lspconfig");
 
 lsp.preset('recommended')
 
@@ -28,10 +29,27 @@ lsp.configure('lua_ls', {
 -- lsp.configure('denols', {
     -- root_dir = lsp_util.root_pattern("deno.json", "deno.jsonc"),
 -- })
+local function organize_imports()
+	local params = {
+		command = "_typescript.organizeImports",
+		arguments = { vim.api.nvim_buf_get_name(0) },
+		title = "",
+	}
+	vim.lsp.buf.execute_command(params)
+end
 
 lsp.configure('tsserver', {
     root_dir = lsp_util.root_pattern("package.json"),
+    commands = {
+      OrganizeImports = {
+        organize_imports,
+        description = "Organize Imports",
+      },
+    },
 })
+
+local on_attach = function(client, bufnr)
+end
 
 local bin_name = 'nxls'
 local cmd = { bin_name, '--stdio'}
