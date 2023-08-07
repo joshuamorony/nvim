@@ -30,5 +30,19 @@
       "});"
     ],
     "description": "Angular Component Test Suite"
+  },
+  "Angular Component": {
+    "prefix": "@Component",
+    "body": [
+      "import { Component } from '@angular/core';",
+      "",
+      "@Component({",
+      "  standalone: true,",
+      "  selector: 'app-${1/(.*)/${1:/downcase}/}',",
+      "  template: ` <p>Hello world</p> `,",
+      "})",
+      "export class ${1:ComponentName}Component {}"
+    ],
+    "description": "Angular Component"
   }
 }
