@@ -1,3 +1,3 @@
-require("josh.settings");
-require("josh.keymaps");
-require("josh.packer");
+require("josh.settings")
+require("josh.keymaps")
+require("josh.packer")

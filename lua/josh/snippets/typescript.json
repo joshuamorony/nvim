@@ -1,0 +1,34 @@
+{
+  "Angular Component Test Suite": {
+    "prefix": "ngTestSuite",
+    "body": [
+      "import { ComponentFixture, TestBed } from '@angular/core/testing';",
+      "import ${1:ComponentName} from './${1/(.*)/${1:/downcase}/}.component';",
+      "",
+      "describe('${1:ComponentName}', () => {",
+      "  let component: ${1:ComponentName};",
+      "  let fixture: ComponentFixture<${1:ComponentName}>;",
+      "",
+      "  beforeEach(() => {",
+      "    TestBed.configureTestingModule({",
+      "      imports: [${1:ComponentName}],",
+      "    })",
+      "      .overrideComponent(${1:ComponentName}, {",
+      "        remove: { imports: [] },",
+      "        add: { imports: [] },",
+      "      })",
+      "      .compileComponents();",
+      "",
+      "    fixture = TestBed.createComponent(${1:ComponentName});",
+      "    component = fixture.componentInstance;",
+      "    fixture.detectChanges();",
+      "  });",
+      "",
+      "  it('should create', () => {",
+      "    expect(component).toBeTruthy();",
+      "  });",
+      "});"
+    ],
+    "description": "Angular Component Test Suite"
+  }
+}
