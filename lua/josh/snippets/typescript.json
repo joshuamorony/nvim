@@ -1,6 +1,6 @@
 {
   "Angular Component Test Suite": {
-    "prefix": "ngTestSuite",
+    "prefix": "ngTestComponent",
     "body": [
       "import { ComponentFixture, TestBed } from '@angular/core/testing';",
       "import ${1:ComponentName} from './${1/(.*)/${1:/downcase}/}.component';",
@@ -31,6 +31,30 @@
     ],
     "description": "Angular Component Test Suite"
   },
+  "Angular Service Test Suite": {
+    "prefix": "ngTestService",
+    "body": [
+      "import { TestBed } from '@angular/core/testing';",
+      "import ${1:ServiceName} from './${1/(.*)/${1:/downcase}/}.component';",
+      "",
+      "describe('${1:ServiceName}', () => {",
+      "  let service: ${1:ServiceName};",
+      "",
+      "  beforeEach(() => {",
+      "    TestBed.configureTestingModule({",
+      "      providers: [${1:ServiceName}],",
+      "    })",
+      "",
+      "    service = TestBed.inject(${1:ServiceName});",
+      "  });",
+      "",
+      "  it('should create', () => {",
+      "    expect(service).toBeTruthy();",
+      "  });",
+      "});"
+    ],
+    "description": "Angular Service Test Suite"
+  },
   "Angular Component": {
     "prefix": "@Component",
     "body": [
@@ -44,5 +68,33 @@
       "export class ${1:ComponentName}Component {}"
     ],
     "description": "Angular Component"
+  },
+  "Fixture Query": {
+    "prefix": "fq",
+    "body": [
+      "const result = fixture.debugElement.query(",
+      "  By.css('[data-testid=\"${1:id}\"]')",
+      ");"
+    ],
+    "description": "Fixture Query"
+  },
+  "Fixture Query All": {
+    "prefix": "fqa",
+    "body": [
+      "const result = fixture.debugElement.queryAll(",
+      "  By.css('[data-testid=\"${1:id}\"]')",
+      ");"
+    ],
+    "description": "Fixture Query All"
+  },
+  "describe": {
+    "prefix": "describe",
+    "body": ["describe('${1:describe}', () => {", "", "});"],
+    "description": "describe"
+  },
+  "it": {
+    "prefix": "it",
+    "body": ["it('should ${1:should}', () => {", "", "});"],
+    "description": "it"
   }
 }
