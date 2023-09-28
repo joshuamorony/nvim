@@ -110,7 +110,7 @@ return require("packer").startup(function(use)
 
 	-- IndentLine
 
-	use("lukas-reineke/indent-blankline.nvim")
+	use({ "lukas-reineke/indent-blankline.nvim", commit = "9637670" })
 	-- use {
 	-- "lukas-reineke/indent-blankline.nvim",
 	-- event = "BufReadPre",
