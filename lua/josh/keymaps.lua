@@ -170,7 +170,7 @@ end)
 vim.keymap.set("n", "<leader>e", vim.cmd.NvimTreeToggle)
 vim.keymap.set("n", "<leader>fr", vim.cmd.NvimTreeRefresh)
 vim.keymap.set("n", "<leader>ff", vim.cmd.NvimTreeFindFile)
-vim.keymap.set("n", "<leader>fg", vim.cmd.NvimTreeCollapseKeepBuffers)
+vim.keymap.set("n", "<leader>fd", vim.cmd.NvimTreeCollapseKeepBuffers)
 vim.keymap.set("n", "<leader>fu", ":NvimTreeResize +10<cr>")
 vim.keymap.set("n", "<leader>fi", ":NvimTreeResize -10<cr>")
 
