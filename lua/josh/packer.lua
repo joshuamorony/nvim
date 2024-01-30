@@ -45,6 +45,21 @@ return require("packer").startup(function(use)
 	use("kdheepak/lazygit.nvim")
 	use("mattkubej/jest.nvim")
 
+	use({
+		"jackMort/ChatGPT.nvim",
+		config = function()
+			require("chatgpt").setup({
+				api_key_command = "op read op://private/OpenAI/credential --no-newline",
+			})
+		end,
+		requires = {
+			"MunifTanjim/nui.nvim",
+			"nvim-lua/plenary.nvim",
+			"folke/trouble.nvim",
+			"nvim-telescope/telescope.nvim",
+		},
+	})
+
 	-- nx
 	use({
 		"Equilibris/nx.nvim",
