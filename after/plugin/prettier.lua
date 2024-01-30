@@ -48,5 +48,10 @@ prettier.setup({
 		"yaml",
 		"lua",
 		"svelte",
+		"vue",
+		"ng",
+	},
+	cli_options = {
+		trailing_comma = "es5",
 	},
 })

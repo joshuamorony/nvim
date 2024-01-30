@@ -1,9 +1,9 @@
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
-vim.opt.tabstop=2
-vim.opt.shiftwidth=2
-vim.opt.softtabstop=2
+vim.opt.tabstop = 2
+vim.opt.shiftwidth = 2
+vim.opt.softtabstop = 2
 vim.opt.expandtab = true
 
 vim.opt.smartindent = true
@@ -26,7 +26,7 @@ vim.opt.laststatus = 2 -- always show statusline
 -- Sidebar
 vim.opt.numberwidth = 3
 vim.opt.showcmd = true
-vim.opt.cmdheight=0
+vim.opt.cmdheight = 0
 
 -- Search
 vim.o.incsearch = true -- starts searching as soon as typing, without enter needed
@@ -44,18 +44,26 @@ vim.opt.colorcolumn = "120"
 
 vim.g.mapleader = " "
 
-
 -- highlight yanked text for 200ms using the "Visual" highlight group
-vim.cmd [[
+vim.cmd([[
   augroup highlight_yank
   autocmd!
   au TextYankPost * silent! lua vim.highlight.on_yank({higroup="Visual", timeout=100})
   augroup END
-]]
+]])
 
 vim.cmd([[
   augroup SVX
     autocmd!
     autocmd BufRead,BufNewFile *.svx set filetype=markdown
+  augroup END
+]])
+
+-- vim.treesitter.language.register("vue", "ng")
+
+vim.cmd([[
+  augroup NG
+    autocmd!
+    autocmd BufRead,BufNewFile *.ng set filetype=vue
   augroup END
 ]])
