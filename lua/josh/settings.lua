@@ -64,6 +64,6 @@ vim.cmd([[
 vim.cmd([[
   augroup NG
     autocmd!
-    autocmd BufRead,BufNewFile *.ng set filetype=vue
+    autocmd BufRead,BufNewFile *.analog set filetype=vue
   augroup END
 ]])
